@@ -6,7 +6,7 @@
 /*   By: wbousfir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 04:35:36 by wbousfir          #+#    #+#             */
-/*   Updated: 2022/10/27 04:54:04 by wbousfir         ###   ########.fr       */
+/*   Updated: 2022/10/27 05:21:36 by wbousfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ int	ft_check_parameters4(const char *wail, va_list p, int x)
 	}
 	return (0);
 }
-
+/*
 int	ft_printf(const char *wail, ...)
 {
 	va_list	p;
@@ -120,6 +120,38 @@ int	ft_printf(const char *wail, ...)
 	ft_check_parameters(wail, x, p);
 	va_end(p);
 	return (0);
+}*/
+
+int	ft_printf(const char *wail, ...)
+{
+	va_list	p;
+	int		x;
+
+	va_start(p, wail);
+	x = 0;
+	while (wail[x])
+	{
+		if (wail[x] == '%' && wail[x + 1] == 'X')
+			ft_hexa_upper(wail, p, x);
+		if (wail[x] == '%' && wail[x + 1] == 'x')
+			ft_hexa_lower(wail, p, x);
+		if (wail[x] == '%' && wail[x + 1] == 's')
+			ft_string(wail, p, x);
+		if (wail[x] == '%' && wail[x + 1] == 'c')
+			ft_char(wail, p, x);
+		if (wail[x] == '%' && wail[x + 1] == 'p')
+			ft_point_in_hexa(wail, p, x);
+		if (wail[x] == '%' && wail[x + 1] == 'i')
+			ft_integer_base10(wail, p, x);
+		if (wail[x] == '%' && wail[x + 1] == 'd')
+			ft_decimal_base10(wail, p, x);
+		if (wail[x] == '%' && wail[x + 1] == 'u')
+			ft_hexa_upper(wail, p, x);
+		x++;
+	}
+	va_end(p);
+	return (0);
+
 }
 
 int main()

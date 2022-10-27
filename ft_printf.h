@@ -6,7 +6,7 @@
 /*   By: wbousfir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 04:05:28 by wbousfir          #+#    #+#             */
-/*   Updated: 2022/10/27 04:52:34 by wbousfir         ###   ########.fr       */
+/*   Updated: 2022/10/27 05:24:36 by wbousfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,15 @@ int	ft_check_parameters3(const char *wail, va_list p, int x);
 int	ft_check_parameters4(const char *wail, va_list p, int x);
 int	ft_check_parameters(const char *wail, int x, va_list p);
 int	ft_printf(const char *wail, ...);
+
+int			ft_hexa_upper(const char *wail, va_list p, int x);
+int			ft_hexa_lower(const char *wail, va_list p, int x);
+int			ft_string(const char *wail, va_list p, int x);
+int			ft_char(const char *wail, va_list p, int x);
+int			ft_point_in_hexa(const char *wail, va_list p, int x);
+int			ft_integer_base10(const char *wail, va_list p, int x);
+int			ft_decimal_base10(const char *wail, va_list p, int x);
+int			ft_hexa_upper(const char *wail, va_list p, int x);
 
 #endif
 
