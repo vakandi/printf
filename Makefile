@@ -67,6 +67,7 @@ all:
 	ar rc $(NAME) *.o
 	@echo "\033[1;32m - COMPILATION FINISHED -\n\n\033[0m"
 	@echo "\033[1;34m  Name of the executable: \n\033[1;34m        $(NAME)\n\n\033[0m"
+	@sh srcs/donuts/make.sh
 clean:
 	@rm -f $(FOLDER_INC)/*.gch
 	@rm *.o
