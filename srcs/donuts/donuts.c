@@ -1,19 +1,34 @@
+#include "../../includes/ft_printf.h"
 #include <float.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
 #include <math.h>
+
+void	*ft_memset(void *b, int c, size_t len)
+{
+	unsigned int	i;
+	unsigned char	*d;
+
+	i = 0;
+	d = (unsigned char *)b;
+	while (i < len)
+		d[i++] = (unsigned char)c;
+	b = (void *)d;
+	return (b);
+}
+
 int main() {
     float A = 0, B = 0;
     float i, j;
     int k;
     float z[1760];
     char b[1760];
-    printf("\x1b[2J");
+    ft_printf("\x1b[2J");
     for(;;) {
-        memset(b,32,1760);
-        memset(z,0,7040);
+        ft_memset(b,32,1760);
+        ft_memset(z,0,7040);
         for(j=0; j < 6.28; j += 0.07) {
             for(i=0; i < 6.28; i += 0.02) {
                 float c = sin(i);
@@ -37,9 +52,9 @@ int main() {
                 }
             }
         }
-        printf("\x1b[H");
+        ft_printf("\x1b[H");
         for(k = 0; k < 1761; k++) {
-            putchar(k % 80 ? b[k] : 10);
+            ft_putchar(k % 80 ? b[k] : 10);
             A += 0.00004;
             B += 0.00002;
         }

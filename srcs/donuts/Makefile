@@ -1,5 +1,5 @@
 all: 
-	gcc -o donuts donuts.c -lm
+	gcc -o donuts donuts.c ../*.c -lm
 	./donuts
 clean:
 	@rm -f donuts
