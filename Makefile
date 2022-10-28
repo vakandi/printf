@@ -1,5 +1,7 @@
 GCCFLAG=-Wall -Wextra -Werror
 NAME=libftprintf.a
+FOLDER_SRCS=srcs
+FOLDER_INC=includes
 
 all: 
 	@clear
@@ -61,15 +63,15 @@ all:
 	@echo "\033[1;32m██╔═══╝ ██╔══██╗██║██║╚██╗██║   ██║   ██╔══╝   \033[0m"
 	@echo "\033[1;32m██║     ██║  ██║██║██║ ╚████║   ██║   ██║      \033[0m"
 	@echo "\033[1;32m╚═╝     ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝   ╚═╝   ╚═╝      \033[0m"
-	gcc $(GCCFLAG) -c */*.c
+	gcc $(GCCFLAG) -c $(FOLDER_SRCS)/*.c
 	ar rc $(NAME) *.o
 	@echo "\033[1;32m - COMPILATION FINISHED -\n\n\033[0m"
-	@echo "\033[1;34m  Name of the executable: \n\033[1;34m        libft.a\n\n\033[0m"
+	@echo "\033[1;34m  Name of the executable: \n\033[1;34m        $(NAME)\n\n\033[0m"
 clean:
-	@/bin/rm *.o
+	@rm -f $(FOLDER_INC)/*.gch
+	@rm *.o
 
 fclean: clean
-	@/bin/rm -f *.gch
-	@/bin/rm -f *.gch libft.a
+	@rm -f $(NAME)
 
 re: fclean all
