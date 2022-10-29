@@ -23,7 +23,7 @@ int	ft_check_other_string_and_char(const char *wail, va_list p, int x)
 	else if (wail[x] == '%' && wail[x + 1] == 's')
 		ft_string(p, x);
 	else if (wail[x] == '%' && wail[x + 1] == 'c')
-		ft_char(p, x);
+		ft_char(p, x);	
 	else
 	{
 		if (x == 0)
@@ -36,7 +36,7 @@ int	ft_check_other_string_and_char(const char *wail, va_list p, int x)
 
 int	ft_printf(const char *wail, ...)
 {
-	va_list	p;
+	va_list		p;
 	int		x;
 
 	va_start(p, wail);
@@ -59,18 +59,18 @@ int	ft_printf(const char *wail, ...)
 	return (0);
 }
 /*
-int	main(void)
+int main()
 {
 //	char s[] = "THIS IS WORKING IF :";
 	//void *p;
 	int a = 96969696;
 	void *p = &a;
-//	ft_printf("%s char: %c FIRST INT %i\n%i\n%i\n%p\n
-			%c:i:d:u:p:x:X:%%:\n%c%c%c\nTHE END OF THE STRING", s, 'C', 6767,
-			50, 55, 55, '\n', '\n', '\n', '\n');
+//	ft_printf("%s char: %c FIRST INT %i\n%i\n%i\n%p\n %c:i:d:u:p:x:X:%%:\n%c%c%c\nTHE END OF THE STRING", s, 'C', 6767, 50, 55, 55, '\n', '\n', '\n', '\n');
 //	ft_printf("%sHEHEOHO", s);
 	ft_printf("this hexa is print :::%p  %x", p, 96969696);
 	printf("\n\nthis hexa is print :::%p   %x", p, 96969696);
 	//printf("REAL PRINTF ::\n%s %u %d END", s, 6767, 50);
-	return (0);
+	return 0;
 }*/
+
+

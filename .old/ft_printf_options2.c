@@ -2,18 +2,15 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_printf_options2.c                               :+:      :+:    :+:   */
-/*                                                    +:+ +:+        
-	+:+     */
-/*   By: wbousfir <wbousfir@student.1337.ma>        +#+  +:+      
-	+#+        */
-/*                                                +#+#+#+#+#+  
-	+#+           */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wbousfir <wbousfir@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 03:03:22 by wbousfir          #+#    #+#             */
 /*   Updated: 2022/10/28 03:05:27 by wbousfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../includes/ft_printf.h"  
 
 int	ft_integer_base10(va_list p, int x)
 {

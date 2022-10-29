@@ -31,7 +31,7 @@ char	*ft_strdup(char *str)
 	return (ret);
 }
 
-int	ft_size(int nb, int base)
+int		ft_size(int nb, int base)
 {
 	int	i;
 
@@ -49,7 +49,7 @@ int	ft_size(int nb, int base)
 	return (i);
 }
 
-char	*ft_fdp(int base, char *b)
+char	*ft_fdp(int	base, char *b)
 {
 	char	*ret;
 	int		v;
@@ -63,7 +63,7 @@ char	*ft_fdp(int base, char *b)
 	while (v != 0)
 	{
 		i--;
-		ret[i] = b[(int)((-(long)v) % base)];
+		ret[i] = b[(int)( (-(long)v) % base)];
 		v /= base;
 	}
 	return (ret);
