@@ -6,7 +6,7 @@
 /*   By: wbousfir <wbousfir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 04:26:45 by wbousfir          #+#    #+#             */
-/*   Updated: 2022/10/28 04:27:02 by wbousfir         ###   ########.fr       */
+/*   Updated: 2022/10/29 02:02:26 by wbousfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,73 @@ char	*ft_fdp(int	base, char *b)
 	return (ret);
 }
 
-char	*ft_itoa_base(int nb, int base)
+char	*ft_itoa_base_upper(int nb, int base)
 {
 	int		i;
 	char	*ret;
 	char	*b;
 
 	b = "0123456789ABCDEF";
+	if (nb == -2147483648 && base == 10)
+		return (ft_strdup("-2147483648"));
+	if (nb == -2147483648)
+		return (ft_fdp(base, b));
+	if (nb == 0)
+		return (ft_strdup("0"));
+	i = ft_size(nb, base);
+	if (!(ret = (char *)malloc(sizeof(char) * i + 1)))
+		return (NULL);
+	ret[i] = '\0';
+	if (nb < 0 && base == 10)
+		ret[0] = '-';
+	if (nb < 0)
+		nb = -nb;
+	while (nb != 0)
+	{
+		i--;
+		ret[i] = b[nb % base];
+		nb /= base;
+	}
+	return (ret);
+}
+
+char	*ft_itoa_base_lower(int nb, int base)
+{
+	int		i;
+	char	*ret;
+	char	*b;
+
+	b = "0123456789abcdef";
+	if (nb == -2147483648 && base == 10)
+		return (ft_strdup("-2147483648"));
+	if (nb == -2147483648)
+		return (ft_fdp(base, b));
+	if (nb == 0)
+		return (ft_strdup("0"));
+	i = ft_size(nb, base);
+	if (!(ret = (char *)malloc(sizeof(char) * i + 1)))
+		return (NULL);
+	ret[i] = '\0';
+	if (nb < 0 && base == 10)
+		ret[0] = '-';
+	if (nb < 0)
+		nb = -nb;
+	while (nb != 0)
+	{
+		i--;
+		ret[i] = b[nb % base];
+		nb /= base;
+	}
+	return (ret);
+}
+
+char	*ft_itoa_base_void(int nb, int base)
+{
+	int		i;
+	char	*ret;
+	char	*b;
+
+	b = "0123456789abcdef";
 	if (nb == -2147483648 && base == 10)
 		return (ft_strdup("-2147483648"));
 	if (nb == -2147483648)
