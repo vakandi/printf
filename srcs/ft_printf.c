@@ -6,7 +6,7 @@
 /*   By: wbousfir <wbousfir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 02:00:00 by wbousfir          #+#    #+#             */
-/*   Updated: 2022/10/29 02:58:30 by wbousfir         ###   ########.fr       */
+/*   Updated: 2022/10/29 03:28:32 by wbousfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,19 +58,14 @@ int	ft_printf(const char *wail, ...)
 	va_end(p);
 	return (0);
 }
-/*
+
 int	main(void)
 {
-//	char s[] = "THIS IS WORKING IF :";
-	//void *p;
-	int a = 96969696;
-	void *p = &a;
-//	ft_printf("%s char: %c FIRST INT %i\n%i\n%i\n%p\n
-			%c:i:d:u:p:x:X:%%:\n%c%c%c\nTHE END OF THE STRING", s, 'C', 6767,
-			50, 55, 55, '\n', '\n', '\n', '\n');
-//	ft_printf("%sHEHEOHO", s);
-	ft_printf("this hexa is print :::%p  %x", p, 96969696);
-	printf("\n\nthis hexa is print :::%p   %x", p, 96969696);
-	//printf("REAL PRINTF ::\n%s %u %d END", s, 6767, 50);
+	//char s[] = "THIS IS WORKING IF :";
+	//int a = 96969696;
+	//void *p = &a;
+	
+	printf("12345%c", 'C');
+	ft_printf("\n12345%c", 'C');
 	return (0);
-}*/
+}
