@@ -15,22 +15,22 @@
 
 #include "../includes/ft_printf.h"
 
-int	ft_integer_base10(va_list p, int x)
+int	ft_integer_base10(va_list p, int x, int print)
 {
 	int i;
 	i = va_arg(p, int);
-	ft_putnbr(i);
+	print += ft_putnbr(i);
 	x++;
-	return (0);
+	return (print);
 }
 
 int	ft_unsigned_decimal_base10(va_list p, int x, int print)
 {
 	unsigned int un_d;
 	un_d = va_arg(p, unsigned int);
-	ft_putnbr(un_d);
+	print += ft_putnbr(un_d);
 	x++;
-	return (0);
+	return (print);
 }
 
 int	ft_decimal_base10(va_list p, int x, int print)
@@ -39,5 +39,5 @@ int	ft_decimal_base10(va_list p, int x, int print)
 	d = va_arg(p, int);
 	print += ft_putnbr(d);
 	x++;
-	return (0);
+	return (print);
 }

@@ -6,18 +6,18 @@
 /*   By: ybayart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/05 10:49:14 by ybayart           #+#    #+#             */
-/*   Updated: 2019/08/11 23:16:51 by ybayart          ###   ########.fr       */
+/*   Updated: 2022/10/30 00:04:01 by wbousfir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+static void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_erreur(char *base, int *erreur)
+static void	ft_erreur(char *base, int *erreur)
 {
 	int i;
 	int j;
@@ -45,8 +45,8 @@ void	ft_erreur(char *base, int *erreur)
 	}
 }
 
-void	ft_putnbr_base(int nbr, char *base)
-{
+int		ft_putnbr_base(int nbr, char *base, int print)
+{	
 	int		lbase;
 	int		erreur;
 	long	nb;
@@ -59,17 +59,18 @@ void	ft_putnbr_base(int nbr, char *base)
 	{
 		if (nb < 0)
 		{
-			ft_putchar('-');
+			print += ft_putchar('-');
 			nb *= -1;
 		}
 		while (base[lbase])
 			lbase++;
 		if (nb < lbase)
-			ft_putchar(base[nb]);
+			print += ft_putchar(base[nb]);
 		if (nb >= lbase)
 		{
-			ft_putnbr_base(nb / lbase, base);
-			ft_putnbr_base(nb % lbase, base);
+			print += ft_putnbr_base(nb / lbase, base, print);
+			print +=ft_putnbr_base(nb % lbase, base, print);
 		}
 	}
+	return (print);
 }
