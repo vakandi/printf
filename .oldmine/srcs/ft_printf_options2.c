@@ -14,8 +14,8 @@
 
 void	ft_integer_base10(va_list p, int x, int *print)
 {
-	int	i;
-
+	int i;
+	
 	i = va_arg(p, int);
 	ft_putnbr(i, print);
 	x++;
@@ -23,8 +23,8 @@ void	ft_integer_base10(va_list p, int x, int *print)
 
 void	ft_unsigned_decimal_base10(va_list p, int x, int *print)
 {
-	unsigned int	un_d;
-
+	unsigned int un_d;
+	
 	un_d = va_arg(p, unsigned int);
 	ft_putnbr(un_d, print);
 	x++;
@@ -32,7 +32,7 @@ void	ft_unsigned_decimal_base10(va_list p, int x, int *print)
 
 void	ft_decimal_base10(va_list p, int x, int print)
 {
-	long	d;
+	long d;
 
 	d = va_arg(p, int);
 	ft_putnbr(d, print);

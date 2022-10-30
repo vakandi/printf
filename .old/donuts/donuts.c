@@ -1,4 +1,3 @@
-#include "../../includes/ft_printf.h"
 #include <float.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -25,7 +24,7 @@ int main() {
     int k;
     float z[1760];
     char b[1760];
-    ft_printf("\x1b[2J");
+    printf("\x1b[2J");
     for(;;) {
         ft_memset(b,32,1760);
         ft_memset(z,0,7040);
@@ -52,9 +51,9 @@ int main() {
                 }
             }
         }
-        ft_printf("\x1b[H");
+        printf("\x1b[H");
         for(k = 0; k < 1761; k++) {
-            ft_putchar(k % 80 ? b[k] : 10);
+            putchar(k % 80 ? b[k] : 10);
             A += 0.00004;
             B += 0.00002;
         }

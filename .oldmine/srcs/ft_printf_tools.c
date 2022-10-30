@@ -40,7 +40,7 @@ int	ft_strlen(const char *s)
 int	ft_putstr(char const *s, int *print)
 {
 	if (s == NULL)
-		return (print += write(1, "null", 4));
+		return print += write(1, "null", 4);
 	ft_putchar(s, print);
 	return (ft_strlen(s));
 }

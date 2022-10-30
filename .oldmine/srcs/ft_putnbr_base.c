@@ -14,8 +14,8 @@
 
 static void	ft_erreur(char *base, int *erreur)
 {
-	int	i;
-	int	j;
+	int i;
+	int j;
 
 	i = 0;
 	j = 0;
@@ -30,17 +30,18 @@ static void	ft_erreur(char *base, int *erreur)
 			if (base[i] == base[j])
 				*erreur = 1;
 		}
-		if (base[i] == '+' || base[i] == '-' || base[i] == '%' || base[i] == '/'
-			|| base[i] == '*' || base[i] == '=' || base[i] == ','
-			|| base[i] == '.' || base[i] < 33 || base[i] > 126)
+		if (base[i] == '+' || base[i] == '-' || base[i] == '%'
+				|| base[i] == '/' || base[i] == '*' || base[i] == '='
+				|| base[i] == ',' || base[i] == '.'
+				|| base[i] < 33 || base[i] > 126)
 			*erreur = 1;
 		else
 			i++;
 	}
 }
 
-void	ft_putnbr_base(int nbr, char *base, int *print)
-{
+void		ft_putnbr_base(int nbr, char *base, int *print)
+{	
 	int		lbase;
 	int		erreur;
 	long	nb;

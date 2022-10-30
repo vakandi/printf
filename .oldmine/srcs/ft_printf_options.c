@@ -52,7 +52,6 @@ void	ft_char(va_list p, int x, int *print)
 void	ft_point_in_hexa(va_list p, int x, int *print)
 {
 	unsigned long	a;
-
 	a = va_arg(p, unsigned long);
 	ft_putnbr_base(a, 16, print);
 	//ft_putstr(ft_itoa_base_lower(a, 16));
