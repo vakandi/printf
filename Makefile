@@ -1,16 +1,22 @@
-GCCFLAG=-Wall -Wextra -Werror
-NAME=libftprintf.a
-FOLDER_SRCS=srcs
-FOLDER_INC=includes
+NAME = libftprintf.a
 
-all: 
-	gcc $(GCCFLAG) -c $(FOLDER_SRCS)/*.c
-	ar rc $(NAME) *.o
-clean:
-	@rm -f $(FOLDER_INC)/*.gch
-	@rm *.o
+SOURCES = ft_printf.c ft_putchar.c ft_putnbr.c ft_putnbr_base.c ft_putstr.c ft_strchr.c helper.c
 
-fclean: clean
-	@rm -f $(NAME)
+FLAGS = -Wall -Wextra -Werror 
 
-re: fclean all
+OBJECT = $(SOURCES:.c=.o)
+
+%.o : %.c
+	gcc $(FLAGS) -c $<
+
+$(NAME) : $(OBJECT)
+	ar -rcs $(NAME) $(OBJECT)
+
+all : $(NAME)
+
+clean :
+	rm -rf $(OBJECT)
+fclean : clean
+	rm -rf libftprintf.a
+re : fclean all
+	
